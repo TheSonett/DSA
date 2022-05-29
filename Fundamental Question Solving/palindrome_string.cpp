@@ -1,62 +1,42 @@
 // Write a program to check if a given string is palindrome or not 
 
+
 #include <iostream>
 #include <string>
 
-std::string isPalindromeString(std::string mystr) {
-	// Iterate over the range [0, N/2]
-	for (int i = 0; i < mystr.length() / 2; i++) {
-		if (mystr[i] != mystr[mystr.length() - i - 1]) {
-			return "No";
+
+std::string isPalindromeString(std::string myst) {
+	for (int i = 0; i < myst.length() / 2; i++) {
+		if (myst[i] == myst[myst.length() - i - 1]) {
+			return "Yes";
 		}
 	}
-	return "Yes";
+	return "No";
 }
 
-bool isPalindromeNumber(int& value) {
-	int temp = value;
-	int rem, sum = 0;
-
-	while (value > 0)
-	{
-		rem = value % 10;
-		std::cout << "rem: " << rem << std::endl;
-		sum = (sum * 10) + rem;
-		std::cout << "sum: " << sum << std::endl;
-		value /= 10;
-		std::cout << "value: " << value << std::endl;
-		std::cout << "-----------" << std::endl;
-	}
-
-	if (temp == sum) {
-		return true;
-	}
-	
-	return false;
+bool isPalindrome(std::string mbstring) {
+    if (mbstring == std::string(mbstring.rbegin(), mbstring.rend())) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 int main()
 {
-	/*std::string mystring;
+	std::string mbstring;
 	std::cout << "Enter a string: ";
-	std::cin >> mystring;
+	std::cin >> mbstring;
 
-	if (mystring == std::string(mystring.rbegin(), mystring.rend())) {
-		std::cout << "It is a palindrome string" << std::endl;
-	}
-	else {
-		std::cout << "It is not a palindrome string" << std::endl;
-	}
+	std::cout << isPalindromeString(mbstring);
 
-	std::cout << isPalindromeString(mystring);*/
+    // if(isPalindrome(mbstring)) {
+    //     std::cout << "It is a palindrome string" << std::endl;
+    // }
+    // else {
+    //     std::cout << "It is not a palindrome string" << std::endl;
+    // }
 
-	int value = 121;
-	if (isPalindromeNumber(value)) {
-		std::cout << "It's a palindrome number";
-	}
-	else {
-		std::cout << "It's not a palindrome number";
-	}
-
-	std::cin.get();
+    return 0;
 }

@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-// using recursion
+// using recursion - O(n)
 int factorial(int value) {
 	if (value == 0 || value == 1) {
 		return 1;
