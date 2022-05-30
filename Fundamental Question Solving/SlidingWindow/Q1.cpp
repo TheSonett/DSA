@@ -1,4 +1,5 @@
-// Learned new things: *std::max_element() & *std::min_element()
+// Q1. WAP to find the maximum sum sub-array of size K
+// Important Notes: *std::max_element() & *std::min_element()
 
 
 #include <iostream>
