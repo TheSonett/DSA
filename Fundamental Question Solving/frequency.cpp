@@ -1,3 +1,5 @@
+// WAP to calculate the frequency of the given numbers.
+
 #include <iostream>
 #include <unordered_map>
 
