@@ -1,22 +1,12 @@
+// Q. https://leetcode.com/problems/merge-two-sorted-lists/
+
+// NOTE: I solved this problem, but not efficiently!
+// Time Complexity is O(n^2)
+
 #include <iostream>
 #include <vector>
-#include <unordered_map>
-#include <list>
-#include <array>
-#include <map>
-#include <algorithm>
-#include <cmath>
-#include <cstdlib>
-#include <numeric>
-#include <set>
-#include <any>
-#include <cstring>
 #include <string>
-#include <memory>
-#include <climits>
-#include <bitset>
-#include <string_view>
-#include <iterator>
+#include <cmath>
 
 struct ListNode
 {
@@ -30,14 +20,16 @@ struct ListNode
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        // Check if they pass any two empty list or not
-        if(!list1 || !list2) {
-            return nullptr;
-        } 
-        else if((list1->next == NULL && list2->val == 0) || (list1->val == 0 && list2->next == NULL)) {
-            ListNode *temp = new ListNode(0);
-            return temp;
-        }
+         // Check if they pass any two empty list or not
+       // if list1 happen to be NULL
+		// we will simply return list2.
+        if(list1 == NULL)
+            return list2;
+		
+		// if list2 happen to be NULL
+		// we will simply return list1.
+        if(list2 == NULL)
+            return list1;
 
         // Adding list2 with list1 with the help of list2 head pointer
         ListNode* temp = list1;
@@ -51,7 +43,7 @@ public:
         ListNode *ptr1 = list1;
         ListNode *ptr2;
         
-        // O(n^2) Not efficient method
+        // O(n^2) -> Not an efficient way, but for not it works!
         while (ptr1->next != nullptr)
         {
             ptr2 = ptr1->next;
@@ -110,19 +102,19 @@ int main()
     Solution obj;
 
     ListNode *list1 = new ListNode();
-    //list1 = obj.CreateNode(0);
-    // obj.AddNodeAtEnd(list1, 2);
-    // obj.AddNodeAtEnd(list1, 4);
+    list1 = obj.CreateNode(1);
+    obj.AddNodeAtEnd(list1, 2);
+    obj.AddNodeAtEnd(list1, 4);
 
     ListNode *list2 = new ListNode();
     list2 = obj.CreateNode(1);
-    // obj.AddNodeAtEnd(list2, 3);
-    // obj.AddNodeAtEnd(list2, 4);
+    obj.AddNodeAtEnd(list2, 3);
+    obj.AddNodeAtEnd(list2, 4);
 
     obj.display(list1);
     obj.display(list2);
 
-    std::cout << "\nAfter merging two lists, We have ..........\n\n";
+    std::cout << "\nAfter merging two lists ::: \n\n";
 
     ListNode* head = obj.mergeTwoLists(list1, list2);
     obj.display(head);
