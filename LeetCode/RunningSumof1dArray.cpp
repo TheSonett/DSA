@@ -1,3 +1,4 @@
+// June Challenge - Day1
 // Q. https://leetcode.com/problems/running-sum-of-1d-array/
 
 #include <iostream>
