@@ -2,58 +2,77 @@
 
 #include <iostream>
 #include <cmath>
-#include <array>
+#include <vector>
 #include <algorithm>
 #include <string>
 
 #define N 15
 
-int main()
-{
-    std::array<int, N> nums{2, 1, 2, 1, 2, 1, 2, 3, 4, 5, 4, 5, 4, 2, 1};
+struct Result {
+    int numberOfElements;
+    int numbers;
+} res;
 
-    bool dp[N][N];
-    int result = 0;
+Result LongestPalindromeArray(std::vector<long long>& nums) {
+    int low, high;
+    int start = 0, end = 1;
 
-    for (int g = 0; g < nums.size(); g++)
+    long long result = 0;
+    int count = 0;
+
+    for (int i = 1; i < nums.size(); i++)
     {
-        for (int i = 0, j = g; j < nums.size(); i++, j++)
+        // for even part
+        low = i - 1;
+        high = i;
+        while (low >= 0 && high < nums.size() && nums[low] == nums[high])
         {
-            if (g == 0)
-            {
-                dp[i][j] = true;
-            }
-            else if (g == 1)
-            {
-                if (nums[i] == nums[j])
-                {
-                    dp[i][j] = true;
-                }
-                else
-                {
-                    dp[i][j] = false;
-                }
-            }
-            else
-            {
-                if (nums[i] == nums[j] && dp[i + 1][j - 1] == true)
-                {
-                    dp[i][j] = true;
-                }
-                else
-                {
-                    dp[i][j] = false;
-                }
+            if(high - low + 1 > end) {
+                start = low;
+                end = high - low + 1;
             }
 
-            if (dp[i][j])
-            {
-                result = g + 1;
+            low--;
+            high++;
+        }
+        
+        // for odd part
+        low = i - 1;
+        high = i + 1;
+        while (low >= 0 && high < nums.size() && nums[low] == nums[high])
+        {
+            if(high - low + 1 > end) {
+                start = low;
+                end = high - low + 1;
             }
+            
+            low--;
+            high++;
         }
     }
+    
+    for (int i = start; i <= start + end - 1; i++)
+    {
+        result = (result * 10) + (nums[i] % 10);
+        count++;
+    }
+    
+    res.numberOfElements = count;
+    res.numbers = result;
+    return { res.numberOfElements, res.numbers };
+}
 
-    std::cout << result;
+
+int main()
+{
+    //std::vector<long long> nums{2, 1, 2, 1, 2, 1, 2, 3, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 1};
+    //std::vector<long long> nums{2, 1, 2, 5, 4, 5, 4, 5, 1};
+    std::vector<long long> nums{2, 1, 2, 1, 2};
+    //std::vector<long long> nums{0, 1, 0, 1, 0, 5, 4, 5, 2}; // test case failed!
+
+    LongestPalindromeArray(nums);
+    std::cout << "Longest palindrome number is: " << res.numbers << std::endl;
+    std::cout << "There are " << res.numberOfElements << " palindrome numbers" << std::endl;
 
     return 0;
 }

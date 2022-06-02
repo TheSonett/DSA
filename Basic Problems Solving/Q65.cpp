@@ -30,14 +30,14 @@ int main()
     for(int i = 0; i < N; i++) {
         for(int j = i + 1; j < N; j++) {
             if(arr[i] == arr[j]) {
-                arr[j] = 0;
+                arr[j] = -99999;
             }
         }
     }
 
     std::cout << "\nThe array values are: " << std::endl;
     for(int i = 0; i < N; i++) {
-        if(arr[i] > 0)
+        if(arr[i] > -99999)
             std::cout << arr[i] << " ";
     }
     
