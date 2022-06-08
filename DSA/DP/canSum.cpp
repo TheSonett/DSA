@@ -1,15 +1,34 @@
+// Q. 
+
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
-bool cache[100];
+// bool canSum(int targetSum, std::vector<int> nums)
+// {   
+//     if(targetSum == 0) {
+//         return true;
+//     }
 
-bool canSum(int targetSum, std::vector<int>& nums)
-{
-    // TODO:
-    // if(cache[targetSum] && !cache[targetSum]) {
-    //     return cache[targetSum];
-    // }
-    
+//     if(targetSum < 0) {
+//         return false;
+//     }
+
+//     for (int i = 0; i < nums.size(); i++)
+//     {
+//         int remainder = targetSum - nums[i];
+//         if(canSum(remainder, nums) == true) {
+//             return true;
+//         }
+//     }
+
+//     return false;
+// }
+
+
+std::unordered_map<int, bool> map;
+bool canSum(int targetSum, std::vector<int> nums)
+{   
     if(targetSum == 0) {
         return true;
     }
@@ -18,30 +37,27 @@ bool canSum(int targetSum, std::vector<int>& nums)
         return false;
     }
 
+    if(map.find(targetSum) != map.end()) {
+        return map[targetSum];
+    }
 
     for (int i = 0; i < nums.size(); i++)
     {
         int remainder = targetSum - nums[i];
-        if(canSum(remainder, nums)) {
-            cache[targetSum] = true;
+        if(canSum(remainder, nums) == true) {
+            map.insert(std::pair<int, bool>(targetSum, true));
             return true;
         }
     }
-    
-    cache[targetSum] = false;
+
+    map.insert(std::pair<int, bool>(targetSum, false));
     return false;
 }
 
 int main()
 {
-    std::vector<int> nums = {5, 3, 1};
-    int targetSum = 300;
-
-    if(canSum(targetSum, nums)) {
-        std::cout << "True\n";
-    } 
-    else {
-        std::cout << "False\n";
-    }
+    std::cout << canSum(7, {2, 3}) << "\n"; // true
+    std::cout << canSum(7, {5, 3, 4, 7}) << "\n"; // true
+    std::cout << canSum(300, {7, 14}) << "\n"; // false
     return 0;
 }
