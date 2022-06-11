@@ -1,4 +1,4 @@
-// Q. 
+// Q. Find a sum of a sub-array which can add up to some K value. return true if it is possible, otherwise false.
 
 #include <iostream>
 #include <vector>
