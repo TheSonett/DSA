@@ -1,7 +1,5 @@
 // Q. https://leetcode.com/problems/add-two-numbers/
 
-// TODO: Not Solved Yet
-
 #include <iostream>
 
 //  Definition for singly-linked list.
@@ -87,6 +85,7 @@ public:
         }
         sum = val1 + val2;
 
+        std::cout << val1 << "+" << val2 << " = " << sum << std::endl;
 
         ListNode * head = new ListNode();
 
@@ -158,3 +157,47 @@ int main()
     obj.Display(head);
     return 0;
 }
+
+// Ans ->
+// class Solution {
+// public:
+//     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+//         ListNode* ans = new ListNode();
+        
+//         ListNode* head = ans;
+//         int carry = 0, val1, val2;
+        
+//         while(l1 != nullptr || l2 != nullptr) {
+//             val1 = 0; 
+//             val2 = 0;    // Initiallizing as 0 incase node doesn't exist
+            
+//             if(l1 != nullptr) {
+//                 val1 = l1->val;
+//                 l1 = l1->next;
+//             }
+            
+//             if(l2 != nullptr) {
+//                 val2 = l2->val;
+//                 l2 = l2->next;
+//             }
+         
+//             head->val = (val1 + val2 + carry) % 10; // taking out last digit    
+//             carry = (val1 + val2 + carry) / 10; // taking out first digit
+            
+//             // If any of this is true then,
+//             // we will create another node using constructor
+//             if(l1 != nullptr || l2  != nullptr || carry != 0)   
+//             {
+//                 head->next = new ListNode();
+//                 head = head->next;
+//             }
+//         }
+        
+//         // Edge Case
+//         if(carry) {
+//             head->val = carry;
+//         }
+        
+//         return ans;
+//     }
+// };
