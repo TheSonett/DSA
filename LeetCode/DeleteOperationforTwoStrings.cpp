@@ -37,14 +37,16 @@ public:
             }
         }
         
-        return matrix[n1][n2];
+        //return matrix[n1][n2];
+        return n1 - matrix[n1][n2] + n2 - matrix[n1][n2];
     }
 
     int minDistance(std::string word1, std::string word2) {
         int n1 = word1.size();
         int n2 = word2.size();
 
-        long long result = n1 + n2 - (2 * LCS(word1, word2, n1, n2));
+        //long long result = n1 + n2 - (2 * LCS(word1, word2, n1, n2));
+        long long result = LCS(word1, word2, n1, n2);
         return result;
     }
 };
