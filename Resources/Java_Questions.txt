@@ -1,0 +1,201 @@
+1.Write a Java Program to reverse a string
+
+2.Write a Java Program to swap two user given integer numbers without using the third variable.
+
+3.Write a Java Program to count the number of words in a string
+
+4.Write a Java Program to find whether a string or number is palindrome or not.
+
+5.Write a Java Program to print the Fibonacci series.
+
+6.Write a Java Program to find the duplicate characters in a string.
+
+7.Write a Java Program to find the second-highest number from an user given integer array.
+
+8.Write a Java Program to remove all white spaces from a string.
+
+9.Write a java program to print sqaure root of an user given integer number.
+
+10.Write a java program to check if two given String is Anagram of each other.
+
+11.Write a java program to Print all permutations of a user given String.
+
+12.Write a java program to reverse a linked list.
+
+13.Write java program to operate following sorting 
+a.Insertion sort
+b.Bubble sort
+c.selection sort
+d.quick sort
+e.merge sort
+
+14.Write java prog to identify user given integer number is
+a.prime or not
+b.Armstrong or not
+c.Pallindrome or not
+d.magic number or not
+
+15.Wrtie java prog to implement stack and queue
+
+16.Write java prog to find out
+a. sum of two matrix
+b. multiplication of two matrix
+c. transpoze of matrix
+d. identify matrix is identity or not
+
+17.Write a java program to create pyramid of characters.
+
+18.Write a java prog to check if two arrays contains same elements? 
+
+19.Write a java prog to Shuffle an Array in Java.
+
+20.Write a java prog how to merge two lists in java.
+
+21.How to prove String is immutable programatically?
+
+22.How you can able to create mutable string in java explain programatically.
+
+23.Write a java Program to Show Diamond Problem with Multiple Inheritance.
+
+24.Show examples of overloading and overriding in Java by using program.
+
+25.We have to calculate the area of a rectangle, a square and a circle. 
+Create an abstract class 'Shape' with three abstract methods namely 
+'RectangleArea' taking two parameters, 'SquareArea' and 'CircleArea' taking one parameter each. 
+The parameters of 'RectangleArea' are its length and breadth, 
+that of 'SquareArea' is its side and that of 'CircleArea' is its radius.
+Now create another class 'Area' containing all the three methods 
+'RectangleArea', 'SquareArea' and 'CircleArea' for printing the area of rectangle, square and circle respectively. 
+Create an object of class 'Area' and call all the three methods.
+
+26.Create a class named 'Member' having the following members:
+Data members
+1 - Name
+2 - Age
+3 - Phone number
+4 - Address
+5 - Salary
+It also has a method named 'printSalary' which prints the salary of the members.
+Two classes 'Employee' and 'Manager' inherits the 'Member' class. The 'Employee' and 'Manager' classes have data members 'specialization' and 'department' respectively. Now, assign name, age, phone number, address and salary to an employee and a manager by making an object of both of these classes and print the same.
+
+27.Write a program to print the names of students by creating a Student class. 
+If no name is passed while creating an object of Student class, then the name should be "Unknown", 
+otherwise the name should be equal to the String value passed while creating object of Student class.
+
+28.Lets create a bank account. Create a class named 'BankAccount' with the following data members
+1 - Name of depositor
+2 - Address of depositor
+3 - Type of account
+4 - Balance in account
+5 - Number of transactions
+Class 'BankAccount' has a method for each of the following 1 - Generate a unique account number for each depositor
+For first depositor, account number will be BA1000, for second depositor it will be BA1001 and so on
+2 - Display information and balance of depositor
+3 - Deposit more amount in balance of any depositor
+4 - Withdraw some amount from balance deposited
+5 - Change address of depositor
+After creating the class, do the following operations
+1 - Enter the information (name, address, type of account, balance) of the depositors. Number of depositors are to be entered by user.
+2 - Print the information of any depositor.
+3 - Add some amount to the account of any depositor and then display final informaion of that depositor
+4 - Remove some amount from the account of any depositor and then display final informaion of that depositor
+5 - Change the address of any depositor and then display the final information of that depositor
+6 - Randomly repeat these processes for some other bank accounts and after that print the total number of transactions.
+
+29.Write a java program to add two binary numbers.
+
+30.Write a Java Program to substract two complex numbers.
+
+31.Write a Java Program to add two complex numbers.
+
+32.Write a Java Program to convert char Array to String.
+
+33.Write a Java Program to check if a given number is perfect square or not.
+
+34.Write a Java Program for operate Linear Search.
+
+35.Write a Java Program for operate Binary Search.
+
+36.Java Program to Sort Elements in Lexicographical Order (Dictionary Order).
+
+37.Java Program to Add Two Dates
+
+38.Write a java program to find common elements between the two given arrays.
+ Suppose given two arrays array1= {1,4,7, 9, 2} arrray2 = {1,7,3,4,5} the answer should be {1,4,7}
+
+39.Write a java program to find out if the given String has all Unique Characters.
+
+40. Write a java program to create deadlock between two threads.
+
+41. Write a java program to count occurrences of each character in String in java. If the String is  
+"Java Hungry" then the answer should be
+{ =1, a=2, r=1, u=1, v=1, g=1, H=1, y=1, J=1, n=1}
+
+42. Write a java program To remove specific characters in the String .For example,
+If the original string is "Alive is awesome"   and the user inputs string to remove "alwsr"  then it should print  "ive i eome" as output .
+
+43. How to Convert Math number to equivalent readable word in java?
+
+44. You are given two threads. You need to print odd numbers using one thread and even numbers using another thread.You need to print in natural order up to MAX.
+For example:
+If MAX is 10, you need to print:
+
+1 2 3 4 5 6 7 8 9 10
+So 1 3 5 7 9 will be printed by odd thread
+2 4 6 8 10 will be printed by even thread.
+
+45. Write a java program to find all pairs of elements in the given array whose sum is equal to a given number. 
+For example, if {4, 5, 7, 11, 9, 13, 8, 12} is an array and 20 is the given number, then you have to find all pairs of elements in this array whose sum must be 20. In this example, (9, 11), (7, 13) and (8, 12) are such pairs whose sum is 20.
+
+46. Write a java program to separate zeros from non-zeros in the given array. You have to move zeros either to end of the array or bring them to beginning of the array. 
+For example, if {14, 0, 5, 2, 0, 3, 0} is the given array, then moving zeros to end of the array will result {14, 5, 2, 3, 0, 0, 0} and bringing zeros to front will result {0, 0, 0, 14, 5, 2, 3}.
+
+47. Write a java program to find all the leaders in an integer array. 
+An element is said to be a leader if all the elements on it’s right side are smaller than it. Rightmost element is always a leader. 
+For example, if {14, 9, 11, 7, 8, 5, 3} is the given array then {14, 11, 8, 5, 3} are the leaders in this array. 
+
+48. Write a java program to reverse a string with preserving the position of spaces. For example, if “I Am Not String” is the given string then the reverse of this string with preserving the position of spaces is “g ni rtS toNmAI”. 
+
+49. Write a prog to find missing number in an array
+If ‘n‘ is the positive number and ‘a‘ is an array of integers of length n-1 containing elements from 1 to n. 
+Then find the missing number in ‘a’ in the range from 1 to n. 
+Occurrence of each element is only once. 
+If n = 8, then array ‘a’ will have 7 elements in the range from 1 to 8. 
+For example {1, 4, 5, 3, 7, 8, 6}. 
+One number will be missing in ‘a’ (2 in this case). 
+You have to find out that missing number. 
+
+50. Write a java program to generate random numbers. 
+
+51. Write a program to create a method to identify an user given number is prime or not.if the number is prime then throw user defined exception.
+
+52. Write a program to create a method to identify an user given number is positive or not.if the number is negative then throw user defined exception.
+
+53. Write java program to explain the following concepts
+a. single inheritance
+b. mutliple inheritance
+c. multilevel inheritance
+d. hierarchical inheritance
+e. hybrid inheritance
+
+54. Write a java prog to create a normal calculator by using the concept of interface to operate addition,substraction,multiplication and division.
+
+55. Write a java program to reverse a singly linked list.
+
+56. java prog to operate all kind of insertion and deletion operation for
+a. singly linked list
+b. doubly linked list
+c. circular linked list
+d. circular doubly linked list
+
+57. Write java prog to operate the following operation for binary tree
+a. preorder traversal
+b. inorder traversal
+c. postorder traversal
+d. calculate height
+
+58. Write a java prog to insert and delete new item in a binary search tree.
+
+59. Write a java prog to find out the name of 2nd highest paid employee.
+
+60. Write a java prog to sort an array in descending order. 
