@@ -37,7 +37,7 @@ public:
 int main()
 {
     std::vector<std::string> words {"ab", "abc", "cd", "def", "abcd"};
-    std::string target = "abcdef"; // true
+    std::string target = "abcdef"; // true 
 
     // std::vector<std::string> words {"bo", "rd", "ate", "t", "ska", "sk", "boar"};
     // std::string target = "skateboard"; // false
