@@ -1,5 +1,15 @@
 // Q. https://leetcode.com/problems/implement-trie-prefix-tree/
 
+// Time complexity:
+// startsWith -> O(n) where n is the number of characters in a word
+// Insertion -> O(n)
+// Searching -> O(n)
+
+// Space complexity:
+// startsWith -> O(1)
+// Insertion -> O(n)
+// Searching -> O(1)
+
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -69,6 +79,20 @@ class Trie {
             }
         }
 
+        // TrieNode* deleteNode(std::string word) {
+        //     TrieNode* current = findNode(word);
+
+        //     if(current != nullptr) {
+        //         return nullptr;
+        //     }
+        //     else {
+        //         delete(current);
+        //         return current;
+        //     }
+
+        //     current->isTerminalNode = false;
+        // }
+
     public:
         TrieNode* findNode(std::string word) {
             TrieNode* current = root;
@@ -88,14 +112,16 @@ class Trie {
 int main()
 {
     Trie *trie = new Trie();
-    trie->insert("apple");
-    std::cout << trie->search("apple") << std::endl;   // return True
-    std::cout << trie->search("app") << std::endl;     // return False
-    std::cout << trie->startsWith("app") << std::endl; // return True
-
-    trie->insert("app");
-    std::cout << trie->search("app") << std::endl;     // return True
+    trie->insert("abc");
     
+    std::cout << trie->search("ab") << std::endl;  // 0
+    std::cout << trie->search("abc") << std::endl; // 1
+
+    std::cout << trie->startsWith("ab") << std::endl; // 1
+
+    trie->deleteNode("abc");
+    std::cout << trie->search("abc") << std::endl; // 1
+
     delete trie;
     return 0;
 }
