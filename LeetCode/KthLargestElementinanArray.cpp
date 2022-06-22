@@ -1,0 +1,44 @@
+// Q. https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+#include <iostream>
+#include <queue>
+#include <vector>
+#include <algorithm>
+
+// int findKthLargest(std::vector<int>& nums, int k) {
+//     std::sort(nums.begin(), nums.end());
+
+//     for (int i = nums.size() - 1; i >= k; i--)
+//     {
+//         std::cout << "Nums: " << nums[i] << "\n";
+//         if(i == k) {
+//             return nums[k];
+//             break;
+//         }
+//     }
+    
+//     return -1;
+// }
+
+int findKthLargest(std::vector<int>& nums, int k) {
+    std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        minHeap.push(nums[i]);
+
+        while (minHeap.size() > k) {
+            minHeap.pop();
+        }
+    }
+    
+    return minHeap.top();
+}
+
+
+int main() {
+    std::vector<int> nums {3, 2, 1, 5, 6, 4};
+    int k = 2;
+
+    std::cout << findKthLargest(nums, k);
+    return 0;
+}
