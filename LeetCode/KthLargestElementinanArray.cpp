@@ -5,34 +5,35 @@
 #include <vector>
 #include <algorithm>
 
-// int findKthLargest(std::vector<int>& nums, int k) {
-//     std::sort(nums.begin(), nums.end());
+int findKthLargest(std::vector<int>& nums, int k) {
+    std::priority_queue<int> maxHeap;
 
-//     for (int i = nums.size() - 1; i >= k; i--)
+    for (int i = 0; i <= k; i++)
+    {
+        maxHeap.push((-1) * nums[i]);
+
+        while (maxHeap.size() > k)
+        {
+            maxHeap.pop();
+        }
+    }
+
+    return maxHeap.top();
+}
+
+// int findKthLargest(std::vector<int>& nums, int k) {
+//     std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;
+//     for (int i = 0; i < nums.size(); i++)
 //     {
-//         std::cout << "Nums: " << nums[i] << "\n";
-//         if(i == k) {
-//             return nums[k];
-//             break;
+//         minHeap.push(nums[i]);
+
+//         while (minHeap.size() > k) {
+//             minHeap.pop();
 //         }
 //     }
     
-//     return -1;
+//     return minHeap.top();
 // }
-
-int findKthLargest(std::vector<int>& nums, int k) {
-    std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;
-    for (int i = 0; i < nums.size(); i++)
-    {
-        minHeap.push(nums[i]);
-
-        while (minHeap.size() > k) {
-            minHeap.pop();
-        }
-    }
-    
-    return minHeap.top();
-}
 
 
 int main() {
