@@ -1,4 +1,4 @@
-// Q2. WAP to find the first negative number in every sub-array of size K
+// First negative number in every sub-array of size K
 
 #include <iostream>
 #include <vector>
