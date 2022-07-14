@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Array\RemoveDuplicateElements.cpp">
+    <ClCompile Include="Binary Tree\ConstructBinaryTreeFromPreorderAndInorder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
