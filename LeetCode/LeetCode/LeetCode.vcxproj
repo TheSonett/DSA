@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Binary Tree\ConstructBinaryTreeFromPreorderAndInorder.cpp" />
+    <ClCompile Include="Matrix\MaxAreaofIsland.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

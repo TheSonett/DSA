@@ -36,38 +36,38 @@ Node* buildBinaryTree(std::vector<int>& nodes) {
 // Time Complexity -> O(n)
 // Space Complexity -> O(n)
 
-void preorderRecursive(Node* root) {
+void preorder(Node* root) {
     if(root == nullptr) {
         return;
     }
 
     std::cout << root->data << " ";
-    preorderRecursive(root->left);
-    preorderRecursive(root->right);
+    preorder(root->left);
+    preorder(root->right);
 }
 
-void inorderRecursive(Node* root) {
+void inorder(Node* root) {
     if(root == nullptr) {
         return;
     }
 
-    preorderRecursive(root->left);
+    inorder(root->left);
     std::cout << root->data << " ";
-    preorderRecursive(root->right);
+    inorder(root->right);
 }
 
-void postorderRecursive(Node* root) {
+void postorder(Node* root) {
     if(root == nullptr) {
         return;
     }
 
-    preorderRecursive(root->left);
-    preorderRecursive(root->right);
+    postorder(root->left);
+    postorder(root->right);
     std::cout << root->data << " ";
 }
 
 
-// Iterative method
+// Iterative methods
 void preorderIterative(Node* root) {
     std::stack<Node*> stack;
     stack.push(root);
@@ -110,6 +110,33 @@ void inorderIterative(Node* root) {
     }
 }
 
+void postorderIterative(Node* root) {
+    std::stack<Node*> stack;
+    stack.push(root);
+
+    while (root != nullptr || !stack.empty()) {
+        if(root != nullptr) {
+            stack.push(root);
+            root = root->left;
+        }
+        else {
+            Node* temp = stack.top()->right;
+            if(temp == nullptr) {
+                temp = stack.top();
+                stack.pop();
+                while (!stack.empty() && temp == stack.top()->right) {
+                    temp = stack.top();
+                    stack.pop();
+                    std::cout << temp->data << " ";
+                }
+            }
+            else {
+                root = temp;
+            }
+        }
+    }
+}
+
 
 int main() {
     // -1 are basically for null nodes
@@ -122,9 +149,7 @@ int main() {
     root = buildBinaryTree(nodes);
 
     // Traversals
-    preorderIterative(root);
-    printf("\n");
-    inorderIterative(root);
+    postorderIterative(root);
 
     return 0;
 }

@@ -1,3 +1,4 @@
-﻿  NextGreaterElement_1.cpp
-E:\DSA\LeetCode\LeetCode\Stack\NextGreaterElement_1.cpp(16,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  MaxAreaofIsland.cpp
+E:\DSA\LeetCode\LeetCode\Matrix\MaxAreaofIsland.cpp(34,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\DSA\LeetCode\LeetCode\Matrix\MaxAreaofIsland.cpp(35,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   LeetCode.vcxproj -> E:\DSA\LeetCode\x64\Debug\LeetCode.exe

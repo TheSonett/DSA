@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Binary Tree\ConstructBinaryTreeFromPreorderAndInorder.cpp">
+    <ClCompile Include="Matrix\MaxAreaofIsland.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
