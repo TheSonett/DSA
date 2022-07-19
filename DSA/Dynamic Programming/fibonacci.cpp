@@ -12,7 +12,7 @@ int fib(int n)
     return fibCache[n];
   } 
 
-  fibCache[n] = (fib(n-1) + fib(n-2));
+  fibCache[n] = fib(n-1) + fib(n-2);
   return fibCache[n];
 }
 

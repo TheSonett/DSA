@@ -1,20 +1,20 @@
 #include <iostream>
 #include <vector>
 
-int howSum(int targetSum, std::vector<int>& nums) {
+std::vector<int> howSum(int targetSum, std::vector<int>& nums) {
     std::vector<int> vec{};
 
     if(targetSum == 0)
-        return 0;
+        return {};
     if(targetSum < 0)
-        return -1;
+        return {NULL};
     
     for (int i = 0; i < nums.size(); i++)
     {
         int remainder = targetSum - nums[i];
-        int result = howSum(remainder, nums);
+        std::vector<int> result = howSum(remainder, nums);
 
-        if(result != -1) {
+        if(result[i] != NULL) {
             vec.push_back(nums[i]);
         }
     }
@@ -23,9 +23,8 @@ int howSum(int targetSum, std::vector<int>& nums) {
     {
         std::cout << vec[i] << " ";
     }
-    
 
-    return -1;
+    return vec;
 }
 
 int main()
@@ -33,7 +32,10 @@ int main()
     std::vector<int> nums = {2, 3, 5};
     int targetSum = 8;
 
-    howSum(targetSum, nums);
+    std::vector<int> ans = howSum(targetSum, nums);
+    for(auto i : ans) {
+        std::cout << i << " ";
+    }
     
     return 0;
 }
