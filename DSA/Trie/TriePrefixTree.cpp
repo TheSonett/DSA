@@ -118,8 +118,6 @@ int main()
     std::cout << trie->search("abc") << std::endl; // 1
 
     std::cout << trie->startsWith("ab") << std::endl; // 1
-
-    trie->deleteNode("abc");
     std::cout << trie->search("abc") << std::endl; // 1
 
     delete trie;

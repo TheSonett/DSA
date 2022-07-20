@@ -1,10 +1,7 @@
-// Code Written By @TheSonett (Joy Saha)
-
 // Array Implementation of Stacks
 // Worst case: Push Operation O(n), 
 //			   Pop Operation is O(1), 
 //			   Peek Operation is O(1)
-
 
 /*
 *	|	50	 |

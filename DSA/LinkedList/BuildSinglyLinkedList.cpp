@@ -52,8 +52,6 @@ int NumberOfNodes(Node* head) {
     return count;
 }
 
-
-
 void Display(Node* head) {
     Node* temp = head;
 
