@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <algorithm>
 
 class Node {
     public:
@@ -110,39 +111,78 @@ void inorderIterative(Node* root) {
     }
 }
 
+// Two stack approach
+// TC -> O(n)
+// SC -> O(n)
 void postorderIterative(Node* root) {
-    std::stack<Node*> stack;
-    stack.push(root);
+    if(root == nullptr) {
+        return;
+    }
 
-    while (root != nullptr || !stack.empty()) {
-        if(root != nullptr) {
-            stack.push(root);
-            root = root->left;
+    std::stack<Node*> stack1;
+    std::stack<Node*> stack2;
+
+    stack1.push(root);
+    while (!stack1.empty())
+    {
+        root = stack1.top();
+        stack1.pop();
+
+        stack2.push(root);
+
+        if(root->left != nullptr) {
+            stack1.push(root->left);
         }
-        else {
-            Node* temp = stack.top()->right;
-            if(temp == nullptr) {
-                temp = stack.top();
-                stack.pop();
-                while (!stack.empty() && temp == stack.top()->right) {
-                    temp = stack.top();
-                    stack.pop();
-                    std::cout << temp->data << " ";
-                }
-            }
-            else {
-                root = temp;
-            }
+
+        if(root->right != nullptr) {
+            stack1.push(root->right);
         }
     }
+
+    while (!stack2.empty())
+    {
+        std::cout << stack2.top()->data << " ";
+        stack2.pop();
+    }
+}
+
+// One Stack Approach
+void postorderIterative2(Node* root) {
+    if(root == nullptr) {
+        return;
+    }
+
+    std::stack<Node*> stack;
+    std::vector<int> postorder;
+
+    stack.push(root);
+    while (!stack.empty())
+    {
+        postorder.push_back(stack.top()->data);
+
+        root = stack.top();
+        stack.pop();
+
+        if(root->left != nullptr) {
+            stack.push(root->left);
+        }
+
+        if(root->right != nullptr) {
+            stack.push(root->right);
+        }
+    }
+
+    std::for_each(postorder.rbegin(), postorder.rend(), [](int x) {
+        std::cout << x << " ";
+    });
 }
 
 
 int main() {
     // -1 are basically for null nodes
-    std::vector<int> nodes {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+    //std::vector<int> nodes {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
     //std::vector<int> nodes {1, 2, 3, -1, -1, 4, 5, -1, -1, 6, -1, -1, 7, -1, -1};
-
+    std::vector<int> nodes {2, 3, 4, -1, -1, 5, -1, -1, 7, -1, 8, -1, -1};
 
     // Creating a node
     Node* root = new Node();
@@ -150,6 +190,8 @@ int main() {
 
     // Traversals
     postorderIterative(root);
+    printf("\n");
+    postorderIterative2(root);
 
     return 0;
 }
