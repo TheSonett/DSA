@@ -73,12 +73,8 @@ void preorderIterative(Node* root) {
     std::stack<Node*> stack;
     stack.push(root);
 
-    while (true)
+    while (!stack.empty())
     {
-        if(stack.empty()) {
-            break;
-        }
-
         root = stack.top();
         stack.pop();
 
