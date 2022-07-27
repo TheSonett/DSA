@@ -64,7 +64,7 @@ class Solution {
             int inorderStartIndex = 0;
             int inorderEndIndex = n - 1;
 
-            // TC -> inserting in map is O(logn)
+            // TC -> inserting in map is O(1)
             for(int i = 0; i < sizeof(in); i++) {
                 hashmap[in[i]] = i;
             }
