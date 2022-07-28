@@ -1,3 +1,6 @@
+// Q. https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+// 114. Flatten Binary Tree to Linked List
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -31,6 +34,7 @@ void flatten(TreeNode* root) {
             // linking
             predecessor->right = current->right;
             current->right = current->left;
+            current->left = nullptr;
         }
 
         // if left doesn't exists, then move forward to right
